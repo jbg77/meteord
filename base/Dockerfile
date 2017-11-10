@@ -15,7 +15,7 @@ RUN bash $METEORD_DIR/lib/cleanup.sh
 
 RUN apt-get update && apt-get install -y \
 	graphicsmagick \
-	graphicsmagick-imagemagick-compat \
+	graphicsmagick-imagemagick-compat 
 
 
 EXPOSE 80
