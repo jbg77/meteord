@@ -13,5 +13,11 @@ RUN bash $METEORD_DIR/lib/install_node.sh
 RUN bash $METEORD_DIR/lib/install_phantomjs.sh
 RUN bash $METEORD_DIR/lib/cleanup.sh
 
+RUN apt-get update && apt-get install -y \
+	graphicsmagick \
+	graphicsmagick-imagemagick-compat \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
+
 EXPOSE 80
 ENTRYPOINT bash $METEORD_DIR/run_app.sh
